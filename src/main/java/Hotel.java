@@ -5,6 +5,7 @@ public class Hotel {
     private String name;
     private ArrayList<Bedroom> collectionBedrooms;
     private ArrayList<ConferenceRoom> collectionConferenceRooms;
+    private ArrayList<Booking> collectionBookings;
 //    ...
     private ArrayList<Guest> collectionGuests;
 
@@ -12,6 +13,7 @@ public class Hotel {
         this.name = name;
         this.collectionBedrooms = new ArrayList<Bedroom>();
         this.collectionConferenceRooms = new ArrayList<ConferenceRoom>();
+        this.collectionBookings = new ArrayList<Booking>();
 //        ...
         this.collectionGuests = new ArrayList<Guest>();
     }
@@ -44,5 +46,16 @@ public class Hotel {
             this.collectionGuests.remove(guest);
             bedroom.removeGuest(guest);
         }
+    }
+
+    public Booking bookRoom(Bedroom bedroom, int nightsBooked) {
+        Booking newBooking = new Booking(bedroom, nightsBooked);
+        this.collectionBookings.add(newBooking);
+        return newBooking;
+    }
+
+    public int bookingCount() {
+        return this.collectionBookings.size();
+
     }
 }

@@ -47,5 +47,12 @@ public class HotelTest {
         assertEquals(0, hotel.guestCount());
     }
 
+    @Test
+    public void canBookRoom() {
+        hotel.addBedroom(bedroom1);
+        hotel.bookRoom(bedroom1, 2);
+        assertEquals (1, hotel.bookingCount());
+
+    }
 
 }

@@ -11,7 +11,7 @@ public class BedroomTest {
     private Guest guest1;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
         bedroom1 = new Bedroom(1, 1, "Single");
         bedroom2 = new Bedroom(2, 2, "Double");
         guest1 = new Guest("Larry");
