@@ -58,4 +58,8 @@ public class Hotel {
         return this.collectionBookings.size();
 
     }
+
+    public double getBill(Booking booking) {
+        return booking.getRoomRate() * booking.getNightsBooked();
+    }
 }

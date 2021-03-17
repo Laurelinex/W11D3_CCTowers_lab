@@ -16,6 +16,10 @@ public class Booking {
     public int getNightsBooked() {
         return nightsBooked;
     }
+
+    public double getRoomRate() {
+        return this.bedroom.getRate();
+    }
 }
 
 

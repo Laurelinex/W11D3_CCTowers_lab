@@ -16,15 +16,18 @@ public class HotelTest {
     private Guest guest1;
     private Guest guest2;
 
+    private Booking booking1;
+
     @Before
     public void setUp() throws Exception {
         hotel = new Hotel("CodeClan Towers");
-        bedroom1 = new Bedroom(1, 1, "Single");
-        bedroom2 = new Bedroom(2, 2, "Double");
+        bedroom1 = new Bedroom(1, 1, "Single", 10.50);
+        bedroom2 = new Bedroom(2, 2, "Double", 20.50 );
         conferenceRoom1 = new ConferenceRoom("The Big Apple Room", 10);
         conferenceRoom2 = new ConferenceRoom("The Michelangelo Room", 5);
         guest1 = new Guest("Larry");
         guest2 = new Guest("Steve");
+        booking1 = new Booking(bedroom2, 10);
     }
 
     @Test
@@ -53,6 +56,11 @@ public class HotelTest {
         hotel.bookRoom(bedroom1, 2);
         assertEquals (1, hotel.bookingCount());
 
+    }
+
+    @Test
+    public void canGetBill() {
+        assertEquals(205.00, hotel.getBill(booking1), 0.01) ;
     }
 
 }

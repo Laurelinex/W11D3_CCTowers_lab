@@ -11,7 +11,7 @@ public class BookingTest {
 
     @Before
     public void setUp() throws Exception {
-        bedroom1 = new Bedroom(1, 1, "Single");
+        bedroom1 = new Bedroom(1, 1, "Single", 10.50);
         booking1 = new Booking(bedroom1, 2);
 
 
