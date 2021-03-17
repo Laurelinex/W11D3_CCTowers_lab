@@ -30,6 +30,10 @@ public class Bedroom {
         this.capacity = capacity;
     }
 
+    public boolean hasCapacity() {
+        return this.capacity > collection.size();
+    }
+
     public String getType() {
         return type;
     }
@@ -44,5 +48,24 @@ public class Bedroom {
 
     public void setCollection(ArrayList<Guest> collection) {
         this.collection = collection;
+    }
+
+    public int guestCount() {
+        return this.collection.size();
+    }
+
+    public void addGuest(Guest guest) {
+        this.collection.add(guest);
+    }
+
+    public void removeGuest(Guest guest) {
+        this.collection.remove(guest);
+    }
+
+    public boolean isCheckedIn(Guest guest) {
+        if(this.collection.contains(guest)) {
+            return true;
+        }
+        return false;
     }
 }
